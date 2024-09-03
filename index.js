@@ -1,10 +1,8 @@
 const fs = require("fs");
 
-// Učitavanje JSON fajla
 const data = fs.readFileSync("groups.json", "utf8");
 const groupsData = JSON.parse(data);
 
-// Iteriranje kroz grupe (A, B, C)
 Object.keys(groupsData).forEach((groupName) => {
   const group = groupsData[groupName];
   console.log(`Group ${groupName}:`);
@@ -46,8 +44,6 @@ Object.keys(groupsData).forEach((groupName) => {
       console.log(
         `${result.winner.Team} defeats ${result.loser.Team} (${result.scoreWinner}:${result.scoreLoser})`
       );
-
-      // Update points and other stats here
     }
   }
 });
